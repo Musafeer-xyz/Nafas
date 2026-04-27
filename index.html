@@ -21,15 +21,36 @@
         <nav>
             <a href="#products">Collection</a>
             <a href="#products">Perfumes</a>
+            <a href="#products">Lifestyle</a>
             <a href="#products">Gadgets</a>
             <a href="#about">About</a>
         </nav>
         <div class="header-icons">
-            <button class="icon-btn" title="Search">🔍</button>
-            <button class="icon-btn" id="cart-open-btn" title="Cart">
-                🛒 <span class="cart-badge" id="cart-badge">0</span>
+            <button class="icon-btn" title="Search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
             </button>
-            <button class="icon-btn" title="Account">👤</button>
+
+            <button class="icon-btn" id="cart-open-btn" title="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="cart-badge" id="cart-badge">0</span>
+            </button>
+
+            <button class="icon-btn" title="Account">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -110,7 +131,9 @@
             <div class="product-grid" id="product-grid">
                 <div class="product-card">
                     <div class="badge">BESTSELLER</div>
-                    <div class="product-img">Ehsas Al Arabiya</div>
+                    <div class="product-img">
+                        <img src="images/ehsas.png" alt="Ehsas Al Arabiya">
+                    </div>
                     <div class="product-info">
                         <span class="cat">PERFUME</span>
                         <h3>Ehsas Al Arabiya</h3>
@@ -121,7 +144,9 @@
 
                 <div class="product-card">
                     <div class="badge">NEW</div>
-                    <div class="product-img">Green Bakhoor</div>
+                    <div class="product-img">
+                        <img src="images/green-bakhoor.png" alt="Green Bakhoor">
+                    </div>
                     <div class="product-info">
                         <span class="cat">PERFUME</span>
                         <h3>Green Bakhoor</h3>
@@ -132,7 +157,9 @@
 
                 <div class="product-card">
                     <div class="badge">LIMITED</div>
-                    <div class="product-img">Gucci Flora</div>
+                    <div class="product-img">
+                        <img src="images/flora.png" alt="Gucci Flora">
+                    </div>
                     <div class="product-info">
                         <span class="cat">PERFUME</span>
                         <h3>Gucci Flora</h3>
