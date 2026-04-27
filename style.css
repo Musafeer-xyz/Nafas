@@ -31,6 +31,16 @@ body {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* এটি জোর করে সাইড স্ক্রল বন্ধ করবে */
+    -webkit-overflow-scrolling: touch;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -618,8 +628,46 @@ body {
 
     /* আপাতত মেনু লুকিয়ে রাখলাম (প্রোফেশনাল অ্যাপসের মতো) */
 
-    .header-container {
-        padding: 0 20px;
+    @media (max-width: 768px) {
+
+        /* হেডার ফিক্স */
+        #header {
+            padding: 0 15px;
+            /* প্যাডিং কমিয়ে আনা */
+        }
+
+        .header-container {
+            padding: 0;
+            width: 100%;
+        }
+
+        /* হিরো সেকশন ফিক্স */
+        .hero-content {
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            /* এটি নিশ্চিত করবে প্যাডিং যেন উইডথ না বাড়ায় */
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            /* আরও একটু ছোট করা যাতে লাইন না ভাঙে */
+            word-wrap: break-word;
+            /* লম্বা শব্দ থাকলে ভেঙে যাবে */
+        }
+
+        /* কন্টেইনার ফিক্স */
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        /* যদি কোনো ইমেজ বা বক্স বড় হয়ে থাকে */
+        img,
+        div {
+            max-width: 100%;
+        }
     }
 
     .logo-name {
