@@ -1,0 +1,499 @@
+/* ১. কালার এবং ফন্ট ভেরিয়েবল - ক্লডের কালার প্যালেট */
+:root {
+    --mint: #3ABFA0;
+    /* ক্লডের মেইন মিন্ট গ্রিন */
+    --mint-dark: #1A8C74;
+    /* ডার্ক ক্যাটাগরি বারের জন্য */
+    --mint-soft: #64A08C;
+    /* সফট ক্যাটাগরি বারের জন্য */
+    --bg-dark: #121212;
+    /* ডার্ক ব্যাকগ্রাউন্ড */
+    --bg-grid: #1a1a1a;
+    /* গ্রিড লাইনের কালার */
+    --text-light: #f4f4f4;
+    --text-muted: #a0a0a0;
+    --font-fancy: 'Cormorant Garamond', serif;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ২. হেডার ডিজাইন - ক্লডের মতো ক্লিন এবং পজিশনড */
+#header {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(18, 18, 18, 0.95);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo-name {
+    font-family: var(--font-fancy);
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    font-weight: 700;
+    display: block;
+}
+
+.logo-tag {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+#header nav {
+    display: flex;
+    gap: 25px;
+}
+
+#header nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+#header nav a:hover {
+    color: var(--mint);
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-badge {
+    background: var(--mint);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* ৩. হিরো সেকশন - গ্রিড ব্যাকগ্রাউন্ড এবং টেক্সট লেআউট */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 90px;
+    /* হেডারের জন্য */
+}
+
+/* CSS দিয়ে ডার্ক গ্রিড ব্যাকগ্রাউন্ড বানানো */
+.hero-grid-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    background-image:
+        linear-gradient(var(--bg-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 50px 50px;
+    /* গ্রিডের আকার */
+    opacity: 0.3;
+}
+
+.hero-content {
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.eyebrow-text {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+.hero-title {
+    font-family: var(--font-fancy);
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.hero-arabic {
+    font-size: 3.5rem;
+    color: var(--mint);
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* বাটন ডিজাইন */
+.btn {
+    padding: 18px 40px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.btn-primary {
+    background-color: var(--mint);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.btn-outline:hover {
+    border-color: var(--mint);
+    color: var(--mint);
+}
+
+/* ৪. ক্যাটাগরি সেকশন */
+.categories {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.cat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-card:hover {
+    border-color: var(--mint);
+    transform: translateY(-5px);
+}
+
+.cat-top-bar {
+    height: 4px;
+    width: 100%;
+}
+
+.cat-top-bar.mint {
+    background: var(--mint);
+}
+
+.cat-top-bar.dark-mint {
+    background: var(--mint-dark);
+}
+
+.cat-top-bar.soft-mint {
+    background: var(--mint-soft);
+}
+
+.cat-body {
+    padding: 40px;
+    position: relative;
+}
+
+.cat-tag {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--mint);
+    margin-bottom: 15px;
+}
+
+.cat-card h3 {
+    font-family: var(--font-fancy);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.cat-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.cat-cta {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ৫. প্রোডাক্ট সেকশন */
+.products {
+    padding: 100px 0;
+    background: #000;
+}
+
+/* কালো ব্যাকগ্রাউন্ড প্রোডাক্টের জন্য */
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.section-eyebrow-line {
+    width: 25px;
+    height: 1px;
+    background: var(--mint);
+}
+
+.section-eyebrow-text {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.section-heading {
+    font-family: var(--font-fancy);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 10px 25px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--mint);
+    color: #000;
+    border-color: var(--mint);
+}
+
+/* প্রোডাক্ট গ্রিড ২ লাইনে ৩টি করে */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* ৩টি কলাম */
+    gap: 30px;
+    width: 100%;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: 0.4s;
+    text-align: left;
+}
+
+.product-card:hover {
+    border-color: var(--mint);
+    transform: translateY(-5px);
+}
+
+.product-img {
+    height: 300px;
+    background: linear-gradient(135deg, rgba(58, 191, 160, 0.1), rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-fancy);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--mint);
+    text-transform: uppercase;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--mint);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    z-index: 5;
+    letter-spacing: 1px;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.cat {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-family: var(--font-fancy);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.price {
+    color: var(--mint);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.add-to-cart-btn {
+    float: right;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--white);
+    color: #000;
+}
+
+/* মোবাইল রেসপন্সিভ - ফোনে গেলে ১টি করে কলাম হবে */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-placeholder {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ৬. ফুটার */
+footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-dark);
+}
+
+.footer-logo {
+    font-family: var(--font-fancy);
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

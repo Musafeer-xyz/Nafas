@@ -6,34 +6,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAFAS | Gentleman's Luxury</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">NAFAS</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-        <div class="nav-icons">
-            <span id="cart-btn">🛒 <small id="cart-count">0</small></span>
+    <header id="header">
+        <div class="logo">
+            <span class="logo-name">NAFAS</span>
+            <span class="logo-tag">GENTLEMAN'S LUXURY</span>
         </div>
-    </nav>
-
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <p class="subtitle">PREMIUM ATTARS & LIFESTYLE</p>
-            <h1>Elegance in Every Breath</h1>
-            <a href="#collection" class="btn">Explore Collection</a>
+        <nav>
+            <a href="#products">Collection</a>
+            <a href="#products">Perfumes</a>
+            <a href="#products">Gadgets</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="header-icons">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" id="cart-open-btn" title="Cart">
+                🛒 <span class="cart-badge" id="cart-badge">0</span>
+            </button>
+            <button class="icon-btn" title="Account">👤</button>
         </div>
     </header>
 
-    <script src="script.js"></script>
+    <section class="hero" id="home">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text">THE GENTLEMAN'S COLLECTION · 2025</span>
+            </div>
+            <h1 class="hero-title">WHERE<br>ELEGANCE<br>BREATHES.</h1>
+            <div class="hero-arabic">نَفَس</div>
+            <p class="hero-desc">
+                Rare attars. Precision instruments. Curated essentials.<br>
+                Crafted for the man who understands that true luxury is felt, not merely seen.
+            </p>
+            <div class="hero-ctas">
+                <a href="#products" class="btn btn-primary">EXPLORE COLLECTION</a>
+                <a href="#about" class="btn btn-outline">OUR STORY</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <div class="section-eyebrow">
+                <div class="section-eyebrow-line"></div>
+                <span class="section-eyebrow-text">CURATED FOR YOU</span>
+            </div>
+            <div class="cat-grid">
+                <div class="cat-card">
+                    <div class="cat-top-bar mint"></div>
+                    <div class="cat-body">
+                        <div class="cat-tag">FRAGRANCE</div>
+                        <h3>Perfumes & Attar</h3>
+                        <p>Rare Oud · Arabian Musk · Signature Blends</p>
+                        <a href="#products" class="cat-cta">SHOP NOW →</a>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-top-bar dark-mint"></div>
+                    <div class="cat-body">
+                        <div class="cat-tag">TECH</div>
+                        <h3>Gadgets</h3>
+                        <p>Precision Engineering · Minimal Form</p>
+                        <a href="#products" class="cat-cta">SHOP NOW →</a>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-top-bar soft-mint"></div>
+                    <div class="cat-body">
+                        <div class="cat-tag">ESSENTIALS</div>
+                        <h3>Lifestyle</h3>
+                        <p>Curated Accessories · Elevated Living</p>
+                        <a href="#products" class="cat-cta">SHOP NOW →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="products-header">
+                <div>
+                    <div class="section-eyebrow">
+                        <div class="section-eyebrow-line"></div>
+                        <span class="section-eyebrow-text">TRENDING NOW</span>
+                    </div>
+                    <h2 class="section-heading">The Edit</h2>
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active">ALL</button>
+                    <button class="filter-btn">PERFUME</button>
+                    <button class="filter-btn">GADGET</button>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card">
+                    <div class="badge">BESTSELLER</div>
+                    <div class="product-img">Ehsas Al Arabiya</div>
+                    <div class="product-info">
+                        <span class="cat">PERFUME</span>
+                        <h3>Ehsas Al Arabiya</h3>
+                        <p class="price">$189</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="badge">NEW</div>
+                    <div class="product-img">Green Bakhoor</div>
+                    <div class="product-info">
+                        <span class="cat">PERFUME</span>
+                        <h3>Green Bakhoor</h3>
+                        <p class="price">$142</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="badge">LIMITED</div>
+                    <div class="product-img">Gucci Flora</div>
+                    <div class="product-info">
+                        <span class="cat">PERFUME</span>
+                        <h3>Gucci Flora</h3>
+                        <p class="price">$215</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">Minimal Tee - Black</div>
+                    <div class="product-info">
+                        <span class="cat">LIFESTYLE</span>
+                        <h3>Nafas Signature Tee</h3>
+                        <p class="price">$45</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">Elegance Tee - White</div>
+                    <div class="product-info">
+                        <span class="cat">LIFESTYLE</span>
+                        <h3>Essential White Tee</h3>
+                        <p class="price">$39</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">Breath Tee - Mint</div>
+                    <div class="product-info">
+                        <span class="cat">LIFESTYLE</span>
+                        <h3>Mint Edition Tee</h3>
+                        <p class="price">$42</p>
+                        <button class="add-to-cart-btn">+ CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-logo">NAFAS</div>
+            <p>&copy; 2025 NAFAS. Gentleman's Luxury.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
