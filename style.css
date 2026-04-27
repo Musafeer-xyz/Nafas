@@ -517,9 +517,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--font-fancy);
-    font-size: 25vw; /* স্ক্রিন অনুযায়ী বড় হবে */
+    font-size: 25vw;
+    /* স্ক্রিন অনুযায়ী বড় হবে */
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.02); /* একদম হালকা */
+    color: rgba(255, 255, 255, 0.02);
+    /* একদম হালকা */
     pointer-events: none;
     z-index: 1;
 }
@@ -593,22 +595,108 @@ body {
     opacity: 0.8;
 }
 
-/* মোবাইল রেসপন্সিভ */
-@media (max-width: 768px) {
-    .philosophy-quote { font-size: 2.5rem; }
-    .philosophy-words { grid-template-columns: 1fr; gap: 30px; }
-}
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE DESIGN (FOR MOBILE & TABLET)
+════════════════════════════════════════════════════ */
 
-/* মোবাইল রেসপন্সিভ - ফোনে গেলে ১টি করে কলাম হবে */
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .philosophy-quote {
+        font-size: 2.8rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    /* ১. নেভিগেশন - মোবাইলে মেনু লুকানো বা ছোট করা */
+    .nav-center {
+        display: none;
+    }
+
+    /* আপাতত মেনু লুকিয়ে রাখলাম (প্রোফেশনাল অ্যাপসের মতো) */
+
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .logo-name {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    /* ২. হিরো সেকশন */
+    .hero {
+        height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-arabic {
+        font-size: 2.5rem;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* ৩. ক্যাটাগরি গ্রিড - ১টি কলাম */
+    .cat-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* ৪. প্রোডাক্ট গ্রিড - ১টি কলাম (আপনার ইচ্ছামতো ২টি করতে পারেন) */
     .product-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-img {
+        height: 350px;
+    }
+
+    /* ৫. ফিলোসফি সেকশন */
+    .philosophy {
+        padding: 80px 0;
+    }
+
+    .philosophy-quote {
+        font-size: 2rem;
+    }
+
+    .philosophy-words {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .philosophy-watermark {
+        font-size: 40vw;
+    }
+
+    /* মোবাইলে আরও বড় ওয়াটারমার্ক */
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .section-heading {
+        font-size: 2rem;
     }
 }
 
