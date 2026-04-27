@@ -406,23 +406,34 @@ body {
 }
 
 .product-img {
+    position: relative;
+    /* ওভারলে পজিশন করার জন্য */
     width: 100%;
     height: 300px;
-    /* এখানে একটি ফিক্সড হাইট দিন, যা সব ছবির জন্য সমান হবে */
     background-color: #1a1a1a;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+/* ছবির ওপর একটি হালকা কালো আস্তরণ */
+.product-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    /* এই মানটি বাড়ালে (যেমন 0.1) আরও ডার্ক হবে */
+    pointer-events: none;
+    /* যাতে ক্লিকের সমস্যা না হয় */
 }
 
 .product-img img {
     width: 100%;
     height: 100%;
-    /* magic property: এটি ছবিকে চ্যাপ্টা না করে ফ্রেম অনুযায়ী ক্রপ করে নেবে */
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
+    /* একটু ব্রাইটনেস কমিয়ে সবগুলোকে সামঞ্জস্যপূর্ণ করা */
+    filter: brightness(0.95) contrast(1.1);
 }
 
 /* হোভার করলে হালকা জুম ইফেক্ট (ঐচ্ছিক) */
@@ -490,6 +501,102 @@ body {
 .add-to-cart-btn:hover {
     background: var(--white);
     color: #000;
+}
+
+.philosophy {
+    padding: 150px 0;
+    background-color: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক */
+.philosophy-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-fancy);
+    font-size: 25vw; /* স্ক্রিন অনুযায়ী বড় হবে */
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.02); /* একদম হালকা */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.philosophy .container {
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-content {
+    max-width: 800px;
+    margin-bottom: 80px;
+}
+
+.philosophy-quote {
+    font-family: var(--font-fancy);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.philosophy-quote span {
+    color: var(--text-muted);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.philosophy-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* ৩টি শব্দের গ্রিড */
+.philosophy-words {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 50px;
+}
+
+.word-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.word-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.word-meta .roman {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.word-meta .meaning {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.word-item .arabic {
+    font-size: 2rem;
+    color: var(--mint);
+    opacity: 0.8;
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 768px) {
+    .philosophy-quote { font-size: 2.5rem; }
+    .philosophy-words { grid-template-columns: 1fr; gap: 30px; }
 }
 
 /* মোবাইল রেসপন্সিভ - ফোনে গেলে ১টি করে কলাম হবে */
