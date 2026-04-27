@@ -34,14 +34,15 @@
                 </svg>
             </button>
 
-            <button class="icon-btn" id="cart-open-btn" title="Cart">
+            <button class="icon-btn" id="cart-open-btn" title="Cart" style="position: relative;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <path d="M16 10a4 4 0 0 1-8 0"></path>
                 </svg>
-                <span class="cart-badge" id="cart-badge">0</span>
+                <span id="cart-badge"
+                    style="position: absolute; top: -8px; right: -10px; background: #3ABFA0; color: #000; font-size: 10px; font-weight: bold; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;">0</span>
             </button>
 
             <button class="icon-btn" title="Account">
@@ -200,54 +201,54 @@
             </div>
         </div>
     </section>
-    
+
     <section class="philosophy" id="about">
-    <div class="philosophy-watermark">NAFAS</div>
-    
-    <div class="container">
-        <div class="section-eyebrow">
-            <div class="section-eyebrow-line"></div>
-            <span class="section-eyebrow-text">THE PHILOSOPHY</span>
-        </div>
+        <div class="philosophy-watermark">NAFAS</div>
 
-        <div class="philosophy-content">
-            <h2 class="philosophy-quote">
-                Luxury is not what you wear. <br>
-                <span>It is how you carry yourself.</span>
-            </h2>
-            <p class="philosophy-body">
-                NAFAS — meaning "breath" in Arabic — was born from a belief that the finest 
-                things in life are those that align with who you truly are. Each product we 
-                carry is selected for its craft, its character, and its capacity to elevate 
-                the everyday into the extraordinary.
-            </p>
-        </div>
+        <div class="container">
+            <div class="section-eyebrow">
+                <div class="section-eyebrow-line"></div>
+                <span class="section-eyebrow-text">THE PHILOSOPHY</span>
+            </div>
 
-        <div class="philosophy-words">
-            <div class="word-item">
-                <div class="word-meta">
-                    <span class="roman">NAFAS</span>
-                    <span class="meaning">Breath</span>
-                </div>
-                <div class="arabic">نَفَس</div>
+            <div class="philosophy-content">
+                <h2 class="philosophy-quote">
+                    Luxury is not what you wear. <br>
+                    <span>It is how you carry yourself.</span>
+                </h2>
+                <p class="philosophy-body">
+                    NAFAS — meaning "breath" in Arabic — was born from a belief that the finest
+                    things in life are those that align with who you truly are. Each product we
+                    carry is selected for its craft, its character, and its capacity to elevate
+                    the everyday into the extraordinary.
+                </p>
             </div>
-            <div class="word-item">
-                <div class="word-meta">
-                    <span class="roman">ASALA</span>
-                    <span class="meaning">Authenticity</span>
+
+            <div class="philosophy-words">
+                <div class="word-item">
+                    <div class="word-meta">
+                        <span class="roman">NAFAS</span>
+                        <span class="meaning">Breath</span>
+                    </div>
+                    <div class="arabic">نَفَس</div>
                 </div>
-                <div class="arabic">أَصَالَة</div>
-            </div>
-            <div class="word-item">
-                <div class="word-meta">
-                    <span class="roman">RUQIY</span>
-                    <span class="meaning">Refinement</span>
+                <div class="word-item">
+                    <div class="word-meta">
+                        <span class="roman">ASALA</span>
+                        <span class="meaning">Authenticity</span>
+                    </div>
+                    <div class="arabic">أَصَالَة</div>
                 </div>
-                <div class="arabic">رُقِيّ</div>
+                <div class="word-item">
+                    <div class="word-meta">
+                        <span class="roman">RUQIY</span>
+                        <span class="meaning">Refinement</span>
+                    </div>
+                    <div class="arabic">رُقِيّ</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer id="footer">
         <div class="container">
@@ -256,6 +257,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
