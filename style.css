@@ -630,43 +630,59 @@ body {
 
     @media (max-width: 768px) {
 
-        /* হেডার ফিক্স */
+        /* হেডারের উচ্চতা অটো করে দেওয়া যাতে কন্টেন্ট জায়গা পায় */
         #header {
-            padding: 0 15px;
-            /* প্যাডিং কমিয়ে আনা */
+            height: auto;
+            padding: 15px 0;
+            flex-direction: column;
+            /* এলিমেন্টগুলো উপর-নিচে থাকবে */
         }
 
         .header-container {
-            padding: 0;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* লোগোর নিচের ছোট ট্যাগলাইন মোবাইলে হাইড করে দেওয়া (জায়গা বাঁচাতে) */
+        .logo-tag {
+            display: none;
+        }
+
+        .logo-name {
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+        }
+
+        /* মেনু আইটেমগুলো মোবাইলে পাশাপাশি সুন্দর করে সাজানো */
+        .nav-center {
+            display: flex;
+            flex-wrap: wrap;
+            /* জায়গা না হলে পরের লাইনে যাবে */
+            justify-content: center;
+            gap: 15px;
             width: 100%;
         }
 
-        /* হিরো সেকশন ফিক্স */
-        .hero-content {
-            width: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
-            /* এটি নিশ্চিত করবে প্যাডিং যেন উইডথ না বাড়ায় */
+        .nav-center a {
+            font-size: 0.65rem;
+            /* ফন্ট সাইজ ছোট করা */
+            letter-spacing: 1px;
+        }
+
+        /* আইকনগুলো এক লাইনে নিচে রাখা */
+        .header-icons {
+            gap: 20px;
+        }
+
+        /* হিরো সেকশনের উপরের প্যাডিং বাড়ানো যাতে হেডারের নিচে না ঢোকে */
+        .hero {
+            padding-top: 180px;
         }
 
         .hero-title {
-            font-size: 2.2rem;
-            /* আরও একটু ছোট করা যাতে লাইন না ভাঙে */
-            word-wrap: break-word;
-            /* লম্বা শব্দ থাকলে ভেঙে যাবে */
-        }
-
-        /* কন্টেইনার ফিক্স */
-        .container {
+            font-size: 2rem;
+            /* টাইটেল আরও ছোট করা যাতে স্ক্রিন থেকে বের না হয় */
             width: 100%;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-
-        /* যদি কোনো ইমেজ বা বক্স বড় হয়ে থাকে */
-        img,
-        div {
-            max-width: 100%;
         }
     }
 
