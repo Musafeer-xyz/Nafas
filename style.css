@@ -139,7 +139,8 @@ body {
     top: -10px;
     right: -10px;
     transition: transform 0.2s ease;
-    display: inline-block; /* ট্রান্সফর্ম কাজ করার জন্য এটি লাগে */
+    display: inline-block;
+    /* ট্রান্সফর্ম কাজ করার জন্য এটি লাগে */
 }
 
 /* ৩. হিরো সেকশন - গ্রিড ব্যাকগ্রাউন্ড এবং টেক্সট লেআউট */
@@ -607,164 +608,99 @@ body {
     opacity: 0.8;
 }
 
-/* ═══════════════════════════════════════════════════
+/* ===================================================
    RESPONSIVE DESIGN (FOR MOBILE & TABLET)
-════════════════════════════════════════════════════ */
-
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-
-    .philosophy-quote {
-        font-size: 2.8rem;
-    }
-}
+=================================================== */
 
 @media (max-width: 768px) {
 
-    /* ১. নেভিগেশন - মোবাইলে মেনু লুকানো বা ছোট করা */
-    .nav-center {
-        display: none;
+    /* সাইড স্ক্রল ফিক্স */
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
     }
 
-    /* আপাতত মেনু লুকিয়ে রাখলাম (প্রোফেশনাল অ্যাপসের মতো) */
+    /* মোবাইল হেডার এডজাস্টমেন্ট */
+    #header {
+        height: auto !important;
+        padding: 10px 0 !important;
+    }
 
-    @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column !important;
+        gap: 10px;
+        padding: 0 15px;
+    }
 
-        /* হেডারের উচ্চতা অটো করে দেওয়া যাতে কন্টেন্ট জায়গা পায় */
-        #header {
-            height: auto;
-            padding: 15px 0;
-            flex-direction: column;
-            /* এলিমেন্টগুলো উপর-নিচে থাকবে */
-        }
-
-        .header-container {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* লোগোর নিচের ছোট ট্যাগলাইন মোবাইলে হাইড করে দেওয়া (জায়গা বাঁচাতে) */
-        .logo-tag {
-            display: none;
-        }
-
-        .logo-name {
-            font-size: 1.4rem;
-            letter-spacing: 3px;
-        }
-
-        /* মেনু আইটেমগুলো মোবাইলে পাশাপাশি সুন্দর করে সাজানো */
-        .nav-center {
-            display: flex;
-            flex-wrap: wrap;
-            /* জায়গা না হলে পরের লাইনে যাবে */
-            justify-content: center;
-            gap: 15px;
-            width: 100%;
-        }
-
-        .nav-center a {
-            font-size: 0.65rem;
-            /* ফন্ট সাইজ ছোট করা */
-            letter-spacing: 1px;
-        }
-
-        /* আইকনগুলো এক লাইনে নিচে রাখা */
-        .header-icons {
-            gap: 20px;
-        }
-
-        /* হিরো সেকশনের উপরের প্যাডিং বাড়ানো যাতে হেডারের নিচে না ঢোকে */
-        .hero {
-            padding-top: 180px;
-        }
-
-        .hero-title {
-            font-size: 2rem;
-            /* টাইটেল আরও ছোট করা যাতে স্ক্রিন থেকে বের না হয় */
-            width: 100%;
-        }
+    /* আইকনগুলোকে লোগোর ডানে ফিক্সড রাখা */
+    .header-icons {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        gap: 15px;
     }
 
     .logo-name {
-        font-size: 1.3rem;
-        letter-spacing: 2px;
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: left;
     }
 
-    /* ২. হিরো সেকশন */
+    /* অ্যান্ড্রয়েড স্টাইল স্লাইডিং মেনু */
+    .nav-center {
+        display: flex !important;
+        width: 100vw;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 20px;
+        gap: 25px;
+        scrollbar-width: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-center::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-center a {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        flex-shrink: 0;
+        color: #fff;
+    }
+
+    /* হিরো ও গ্রিড ফিক্স */
     .hero {
-        height: auto;
-        padding: 120px 0 60px;
+        padding-top: 140px;
+        text-align: center;
     }
 
     .hero-title {
-        font-size: 2.8rem;
-        line-height: 1.1;
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 
-    .hero-arabic {
-        font-size: 2.5rem;
-    }
-
-    .hero-ctas {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 20px;
-    }
-
-    .btn {
-        width: 100%;
-        margin: 0;
-    }
-
-    /* ৩. ক্যাটাগরি গ্রিড - ১টি কলাম */
-    .cat-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* ৪. প্রোডাক্ট গ্রিড - ১টি কলাম (আপনার ইচ্ছামতো ২টি করতে পারেন) */
     .product-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .product-img {
-        height: 350px;
-    }
-
-    /* ৫. ফিলোসফি সেকশন */
-    .philosophy {
-        padding: 80px 0;
-    }
-
-    .philosophy-quote {
-        font-size: 2rem;
-    }
-
-    .philosophy-words {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .philosophy-watermark {
-        font-size: 40vw;
+    .cat-grid {
+        grid-template-columns: 1fr;
     }
 
-    /* মোবাইলে আরও বড় ওয়াটারমার্ক */
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.2rem;
+    .philosophy-quote {
+        font-size: 1.8rem;
     }
 
-    .section-heading {
-        font-size: 2rem;
+    .philosophy-words {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
+
 
 .product-placeholder {
     color: var(--text-muted);
@@ -772,21 +708,89 @@ body {
 }
 
 /* ৬. ফুটার */
-footer {
-    padding: 50px 0;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background: var(--bg-dark);
+/* ===================================================
+   FOOTER SECTION
+=================================================== */
+
+#main-footer {
+    background-color: #0a0a0a;
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(58, 191, 160, 0.1);
+    color: #fff;
+    margin-top: 50px;
 }
 
-.footer-logo {
-    font-family: var(--font-fancy);
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
 }
 
-footer p {
+.footer-brand p {
+    color: #888;
+    margin: 20px 0;
+    max-width: 300px;
+    font-size: 0.9rem;
+}
+
+.social-links { display: flex; gap: 20px; }
+.social-links a { color: #3ABFA0; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; }
+
+.footer-links h4, .footer-newsletter h4 {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.footer-links { display: flex; flex-direction: column; gap: 15px; }
+.footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
+.footer-links a:hover { color: #3ABFA0; }
+
+.footer-newsletter p { color: #888; font-size: 0.85rem; margin-bottom: 20px; }
+
+.subscribe-box {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.subscribe-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    outline: none;
+}
+
+.btn-sub {
+    background: transparent;
+    border: none;
+    color: #3ABFA0;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.75rem;
+    color: #555;
+}
+
+.footer-legal a { color: #555; text-decoration: none; margin-left: 20px; }
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .footer-brand p { margin: 20px auto; }
+    .social-links { justify-content: center; }
+    .subscribe-box { max-width: 300px; margin: 0 auto; }
+    .footer-bottom { flex-direction: column; gap: 20px; }
+    .footer-legal a { margin: 0 10px; }
 }
