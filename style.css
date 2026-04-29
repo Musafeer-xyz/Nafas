@@ -614,67 +614,70 @@ body {
 
 @media (max-width: 768px) {
 
-    /* সাইড স্ক্রল ফিক্স */
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-    }
-
-    /* মোবাইল হেডার এডজাস্টমেন্ট */
     #header {
         height: auto !important;
-        padding: 10px 0 !important;
+        padding: 15px 0 !important;
     }
 
     .header-container {
-        flex-direction: column !important;
-        gap: 10px;
-        padding: 0 15px;
-    }
-
-    /* আইকনগুলোকে লোগোর ডানে ফিক্সড রাখা */
-    .header-icons {
-        position: absolute;
-        right: 15px;
-        top: 15px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        /* লোগো আর আইকন পাশাপাশি */
+        grid-template-rows: auto auto;
+        /* দুইটা লাইন */
         gap: 15px;
+        padding: 0 20px;
     }
 
-    .logo-name {
-        font-size: 1.2rem;
-        width: 100%;
-        text-align: left;
+    /* লোগো বামে */
+    .logo {
+        grid-column: 1;
+        grid-row: 1;
     }
 
-    /* অ্যান্ড্রয়েড স্টাইল স্লাইডিং মেনু */
-    .nav-center {
-        display: flex !important;
-        width: 100vw;
+    /* আইকনগুলো মাঝখানে/ডানে সুন্দর করে সাজানো */
+    .center-icons {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* মেনুবার - যা লোগো ও আইকনের নিচে একটি সুন্দর বারে থাকবে */
+    .nav-menu {
+        grid-column: 1 / span 2;
+        /* পুরো লাইন জুড়ে */
+        grid-row: 2;
+        background: rgba(255, 255, 255, 0.03);
+        /* হালকা বর্ডার বা ব্যাকগ্রাউন্ড */
+        border-radius: 8px;
+        padding: 10px;
         overflow-x: auto;
-        white-space: nowrap;
-        padding: 10px 20px;
-        gap: 25px;
-        scrollbar-width: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* যদি জায়গা না হয় তবে স্ক্রল হবে */
     }
 
-    .nav-center::-webkit-scrollbar {
-        display: none;
+    .menu-items {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
     }
 
-    .nav-center a {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
-        flex-shrink: 0;
-        color: #fff;
+    .menu-items a {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
     }
 
-    /* হিরো ও গ্রিড ফিক্স */
+    .menu-items a:hover {
+        color: var(--mint);
+    }
+
+    /* হিরো সেকশন ফিক্স */
     .hero {
-        padding-top: 140px;
-        text-align: center;
+        padding-top: 160px;
     }
 
     .hero-title {
@@ -734,21 +737,48 @@ body {
     font-size: 0.9rem;
 }
 
-.social-links { display: flex; gap: 20px; }
-.social-links a { color: #3ABFA0; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; }
+.social-links {
+    display: flex;
+    gap: 20px;
+}
 
-.footer-links h4, .footer-newsletter h4 {
+.social-links a {
+    color: #3ABFA0;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.footer-links h4,
+.footer-newsletter h4 {
     font-size: 0.8rem;
     letter-spacing: 3px;
     margin-bottom: 25px;
     color: #fff;
 }
 
-.footer-links { display: flex; flex-direction: column; gap: 15px; }
-.footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
-.footer-links a:hover { color: #3ABFA0; }
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-.footer-newsletter p { color: #888; font-size: 0.85rem; margin-bottom: 20px; }
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #3ABFA0;
+}
+
+.footer-newsletter p {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
 
 .subscribe-box {
     display: flex;
@@ -784,13 +814,38 @@ body {
     color: #555;
 }
 
-.footer-legal a { color: #555; text-decoration: none; margin-left: 20px; }
+.footer-legal a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
 @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .footer-brand p { margin: 20px auto; }
-    .social-links { justify-content: center; }
-    .subscribe-box { max-width: 300px; margin: 0 auto; }
-    .footer-bottom { flex-direction: column; gap: 20px; }
-    .footer-legal a { margin: 0 10px; }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin: 20px auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .subscribe-box {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-legal a {
+        margin: 0 10px;
+    }
 }
