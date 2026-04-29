@@ -28,7 +28,7 @@
 
             <nav class="pc-nav">
                 <a href="#products">Collection</a>
-                <a href="#products">Perfumes</a>
+                <a href="perfumes.html">Perfumes</a>
                 <a href="#products">Lifestyle</a>
                 <a href="#products">Gadgets</a>
                 <a href="#about">About</a>
@@ -308,6 +308,37 @@
             </div>
         </div>
     </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>YOUR CART</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items-container">
+            <div class="cart-item">
+                <div class="item-img" style="background: #222; width: 60px; height: 60px; border-radius: 5px;"></div>
+                <div class="item-details">
+                    <h4>Ehsas Al Arabiya</h4>
+                    <p>$189</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="coupon-box">
+                <input type="text" placeholder="Promo code">
+                <button>Apply</button>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$189</span>
+            </div>
+            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

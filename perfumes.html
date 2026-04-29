@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumes Collection | NAFAS</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body style="background-color: #0a0a0a; color: #fff; font-family: sans-serif; margin: 0;">
+
+    <header id="header">
+        <div class="header-container">
+            <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="logo">
+                <span class="logo-name">NAFAS</span>
+            </div>
+            <nav class="pc-nav">
+                <a href="index.html">Home</a>
+                <a href="perfumes.html">Perfumes</a>
+                <a href="#">Lifestyle</a>
+                <a href="#">Gadgets</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="header-icons-group">
+                <div class="header-icons">
+                    <button class="icon-btn" title="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button class="icon-btn" id="cart-open-btn" title="Cart" style="position: relative;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        <span id="cart-badge" style="position: absolute; top: -8px; right: -10px; background: #3ABFA0; color: #000; font-size: 10px; font-weight: bold; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;">0</span>
+                    </button>
+                    <button class="icon-btn" title="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-side-menu" id="mobile-side-menu">
+        <button class="close-menu" id="close-menu">&times;</button>
+        <div class="side-menu-logo">NAFAS</div>
+        <nav class="side-nav">
+            <a href="index.html">Home</a>
+            <a href="perfumes.html">Perfumes</a>
+            <a href="#">Lifestyle</a>
+            <a href="#">Gadgets</a>
+            <a href="#">About</a>
+        </nav>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <section style="padding: 180px 20px 80px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <h1 style="font-size: 2.5rem; letter-spacing: 5px; margin: 0; text-transform: uppercase;">The Perfume Collection</h1>
+        <p style="color: #888; font-size: 1.1rem; margin-top: 15px; letter-spacing: 1px;">Crafted for the man who understands that true luxury is felt, not merely seen.</p>
+    </section>
+
+    <section style="max-width: 1200px; margin: 60px auto; padding: 0 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+            
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; padding: 20px;">
+                <div style="background: #1a1a1a; height: 350px; border-radius: 5px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #444;">
+                    [Image: Ehsas Al Arabiya]
+                </div>
+                <div>
+                    <span style="color: #666; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Perfume</span>
+                    <h3 style="font-size: 1.4rem; margin: 10px 0; letter-spacing: 1px;">Ehsas Al Arabiya</h3>
+                    <p style="color: #3ABFA0; font-size: 1.3rem; font-weight: bold; margin-bottom: 25px;">$189</p>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="add-to-cart-btn" data-name="Ehsas Al Arabiya" data-price="189" style="flex: 1; padding: 12px; background: transparent; border: 1px solid rgba(58, 191, 160, 0.5); color: #3ABFA0; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">+ Cart</button>
+                        <button style="flex: 1; padding: 12px; background: #3ABFA0; border: none; color: #000; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; padding: 20px;">
+                <div style="background: #1a1a1a; height: 350px; border-radius: 5px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #444;">
+                    [Image: Green Bakhoor]
+                </div>
+                <div>
+                    <span style="color: #666; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Perfume</span>
+                    <h3 style="font-size: 1.4rem; margin: 10px 0; letter-spacing: 1px;">Green Bakhoor</h3>
+                    <p style="color: #3ABFA0; font-size: 1.3rem; font-weight: bold; margin-bottom: 25px;">$142</p>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="add-to-cart-btn" data-name="Green Bakhoor" data-price="142" style="flex: 1; padding: 12px; background: transparent; border: 1px solid rgba(58, 191, 160, 0.5); color: #3ABFA0; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">+ Cart</button>
+                        <button style="flex: 1; padding: 12px; background: #3ABFA0; border: none; color: #000; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; padding: 20px;">
+                <div style="background: #1a1a1a; height: 350px; border-radius: 5px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #444;">
+                    [Image: Gucci Flora]
+                </div>
+                <div>
+                    <span style="color: #666; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Perfume</span>
+                    <h3 style="font-size: 1.4rem; margin: 10px 0; letter-spacing: 1px;">Gucci Flora</h3>
+                    <p style="color: #3ABFA0; font-size: 1.3rem; font-weight: bold; margin-bottom: 25px;">$215</p>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="add-to-cart-btn" data-name="Gucci Flora" data-price="215" style="flex: 1; padding: 12px; background: transparent; border: 1px solid rgba(58, 191, 160, 0.5); color: #3ABFA0; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">+ Cart</button>
+                        <button style="flex: 1; padding: 12px; background: #3ABFA0; border: none; color: #000; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>YOUR CART</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            </div>
+        <div class="cart-footer">
+            <div class="coupon-box">
+                <input type="text" placeholder="Promo code">
+                <button>Apply</button>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
+        <span class="logo-name" style="font-size: 1.5rem; letter-spacing: 4px;">NAFAS</span>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px;">&copy; 2026 Gentleman's Luxury. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

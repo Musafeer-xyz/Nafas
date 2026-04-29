@@ -54,4 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Cart Drawer Toggle Logic
+    const cartOpenBtn = document.getElementById('cart-open-btn');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const closeCartBtn = document.getElementById('close-cart');
+    const cartOverlay = document.getElementById('cart-overlay');
+
+    const toggleCart = () => {
+        cartDrawer.classList.toggle('open');
+        cartOverlay.classList.toggle('open');
+    };
+
+    if (cartOpenBtn) cartOpenBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // বাটনের ডিফল্ট কাজ বন্ধ করা
+        toggleCart();
+    });
+    if (closeCartBtn) closeCartBtn.addEventListener('click', toggleCart);
+    if (cartOverlay) cartOverlay.addEventListener('click', toggleCart);
 });

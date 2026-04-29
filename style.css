@@ -998,3 +998,80 @@ body {
         margin: 0 10px;
     }
 }
+
+/* ===================================================
+   CART DRAWER STYLES
+=================================================== */
+.cart-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2500;
+    backdrop-filter: blur(5px);
+}
+.cart-overlay.open { display: block; }
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -450px; /* স্ক্রিনের ডানে লুকানো থাকবে */
+    width: 400px; /* পিসিতে ৪০০ পিক্সেল */
+    height: 100vh;
+    background-color: #0a0a0a;
+    z-index: 3000;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(58, 191, 160, 0.2);
+}
+.cart-drawer.open { right: 0; } /* ওপেন হলে স্ক্রিনে আসবে */
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.cart-header h2 { font-size: 1.2rem; letter-spacing: 2px; }
+.close-cart { background: none; border: none; color: #888; font-size: 28px; cursor: pointer; transition: 0.3s; }
+.close-cart:hover { color: var(--mint); }
+
+.cart-items {
+    flex-grow: 1; /* মাঝখানের জায়গা পুরোটাই নেবে */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 8px;
+}
+.item-details h4 { font-size: 0.9rem; margin-bottom: 5px; }
+.item-details p { color: var(--mint); font-weight: bold; font-size: 0.9rem; }
+
+.cart-footer { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; }
+.coupon-box { display: flex; gap: 10px; margin-bottom: 20px; }
+.coupon-box input { flex-grow: 1; padding: 10px; background: transparent; border: 1px solid #333; color: #fff; outline: none; }
+.coupon-box button { background: #333; color: #fff; border: none; padding: 0 15px; cursor: pointer; }
+
+.cart-total { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; }
+.checkout-btn { width: 100%; padding: 15px; background: var(--mint); color: #000; border: none; font-weight: bold; font-size: 1rem; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+.checkout-btn:hover { background: #fff; }
+
+/* মোবাইলের জন্য কার্ট ফুল-স্ক্রিন করা */
+@media (max-width: 768px) {
+    .cart-drawer {
+        width: 100%; /* মোবাইলে পুরো স্ক্রিন জুড়ে থাকবে */
+        right: -100%;
+    }
+}
