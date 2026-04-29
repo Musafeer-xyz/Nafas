@@ -14,48 +14,71 @@
 <body>
 
     <header id="header">
-        <div class="logo">
-            <span class="logo-name">NAFAS</span>
-            <span class="logo-tag">GENTLEMAN'S LUXURY</span>
-        </div>
+        <div class="header-container">
 
-        <nav>
+            <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="logo">
+                <span class="logo-name">NAFAS</span>
+            </div>
+
+            <nav class="pc-nav">
+                <a href="#products">Collection</a>
+                <a href="#products">Perfumes</a>
+                <a href="#products">Lifestyle</a>
+                <a href="#products">Gadgets</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="header-icons-group">
+                <div class="header-icons">
+                    <button class="icon-btn" title="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+
+                    <button class="icon-btn" id="cart-open-btn" title="Cart" style="position: relative;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span id="cart-badge"
+                            style="position: absolute; top: -8px; right: -10px; background: #3ABFA0; color: #000; font-size: 10px; font-weight: bold; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;">0</span>
+                    </button>
+
+                    <button class="icon-btn" title="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-side-menu" id="mobile-side-menu">
+        <button class="close-menu" id="close-menu">&times;</button>
+        <div class="side-menu-logo">NAFAS</div>
+        <nav class="side-nav">
             <a href="#products">Collection</a>
             <a href="#products">Perfumes</a>
             <a href="#products">Lifestyle</a>
             <a href="#products">Gadgets</a>
             <a href="#about">About</a>
         </nav>
-
-        <div class="header-icons">
-            <button class="icon-btn" title="Search">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-
-            <button class="icon-btn" id="cart-open-btn" title="Cart" style="position: relative;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <span id="cart-badge"
-                    style="position: absolute; top: -8px; right: -10px; background: #3ABFA0; color: #000; font-size: 10px; font-weight: bold; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10;">0</span>
-            </button>
-
-            <button class="icon-btn" title="Account">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-            </button>
-        </div>
-    </header>
+    </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
 
     <section class="hero" id="home">
         <div class="hero-grid-bg"></div>
